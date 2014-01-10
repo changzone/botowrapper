@@ -13,7 +13,7 @@ Install
 ======
 Make sure to add this to your import paths prior to referencing this module
 
-#assumes your file path is ./botowrapper contains the BotoWrapper.py file
+assumes your file path is ./botowrapper contains the BotoWrapper.py file
 sys.path.append('./botowrapper')
 from BotoWrapper import BotoWrapper
 
