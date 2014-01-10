@@ -202,4 +202,4 @@ class BotoWrapper:
         connection = pymongo.MongoReplicaSetClient(hosts_or_uri=",".join(instanceList), replicaSet=rsName.replace('*',''), w=1, **options )
         return connection
 
-__author__ = 'warren'
+__author__ = 'warren chang :: https://github.com/changzone/botowrapper'
