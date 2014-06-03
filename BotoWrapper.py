@@ -122,6 +122,26 @@ class BotoWrapper:
 
         return result
 
+    def getAllTags(self):
+        conn = self.connectEC2()
+        result = conn.get_all_tags()
+        return result
+
+    def getAllInstances(self):
+        conn = self.connectEC2()
+        result = conn.get_all_instances()
+        return result
+
+    def getInstance(self, id):
+        conn = self.connectEC2()
+        resultlist = conn.get_all_instances(instance_ids=[id])
+        result = []
+        for reservations in resultlist:
+            for instances in reservations.instances:
+                result.append(instances)
+
+        return result
+
     def percent_complete(self, complete=0, total=0):
         self.logger.info('Copying file to S3, %s of %s bytes (%s%%) uploaded.' % (complete, total, ((complete*100/total))))
 
